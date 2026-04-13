@@ -1,12 +1,9 @@
 name: Sync to Hugging Face Hub
-
 on:
   push:
     branches: [main]
-
   # to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
@@ -15,12 +12,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Add remote
         env:
           HF: ${{ secrets.HF }}
-        run: git remote add space https://ShashiKanth16:$HF@huggingface.co/spaces/ShashiKanth16/TextSummarizer
-
+        run: git remote add space https://ShashiKanth16:$HF@huggingface.co/spaces/ShashiKanth16/TextSummarizer || true
       - name: Push to hub
         env:
           HF: ${{ secrets.HF }}
