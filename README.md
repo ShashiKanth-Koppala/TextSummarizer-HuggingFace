@@ -1,5 +1,3 @@
-# TextSummarizer-HuggingFace
-
 ---
 title: TextSummarizer
 emoji: 📝
